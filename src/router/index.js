@@ -18,7 +18,17 @@ const index = resolve => {
     resolve(require('../views/index.vue'));
   });
 };
-
+//product
+const productList = resolve => {
+  require.ensure(['../views/product/productList.vue'], () => {
+    resolve(require('../views/product/productList.vue'));
+  });
+};
+const productDetail = resolve => {
+  require.ensure(['../views/product/productDetail.vue'], () => {
+    resolve(require('../views/product/productDetail.vue'));
+  });
+};
 const routers=[
   {
     path: '/index',
@@ -29,10 +39,24 @@ const routers=[
     path: '/product',
     name: 'product',
     component(resolve) {
-      require.ensure(['../views/product.vue'], () => {
-        resolve(require('../views/product.vue'));
+      require.ensure(['../views/product/product.vue'], () => {
+        resolve(require('../views/product/product.vue'));
       });
-    }
+    },
+    children: [
+      {
+        // 当 /user/:id/profile 匹配成功，
+        // UserProfile 会被渲染在 User 的 <router-view> 中
+        path: 'productList',
+        component: productList
+      },
+      {
+        // 当 /user/:id/posts 匹配成功
+        // UserPosts 会被渲染在 User 的 <router-view> 中
+        path: 'productDetail',
+        component: productDetail
+      }
+    ]
   },
 
   {

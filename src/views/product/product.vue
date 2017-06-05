@@ -1,8 +1,8 @@
 
 <template>
-  <div>
+  <div id="product">
     <nv-head :title="product"></nv-head>
-    <nv-bottom></nv-bottom>
+    <router-view></router-view>
   </div>
 
  <!-- <div>
@@ -11,8 +11,8 @@
   </div>-->
 </template>
 <script>
-  import nvHead from '../components/head.vue';
-	import nvBottom from '../components/bottom.vue';
+  import nvHead from '../../components/head.vue';
+	import nvBottom from '../../components/bottom.vue';
   export default {
     mounted() {
 

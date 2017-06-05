@@ -2,18 +2,18 @@
 <template>
 	<!--要写个div包裹整个-->
 	<div>
-		
+
     	<nv-head :title="index"></nv-head>
     	<div class='index'>
-    		
+
     	</div>
     	<nv-bottom></nv-bottom>
   	</div>
-  	
-	
-  
 
-  
+
+
+
+
 </template>
 <script>
   import nvHead from '../components/head.vue';
@@ -37,6 +37,6 @@
 </script>
 <style>
 	.index{
-		
+
 	}
 </style>
