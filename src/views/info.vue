@@ -1,7 +1,8 @@
 
 <template>
-  <div>
-    <nv-head :title="info"></nv-head>
+  <div class="info">
+    <nv-head></nv-head>
+    <div class="infomation"></div>
     <nv-bottom></nv-bottom>
   </div>
 
@@ -30,5 +31,18 @@
   };
 </script>
 <style>
-	
+  .info{
+    width:100%;
+    height:100%;
+    background:#F2F2F2;
+  }
+  .infomation{
+    width:100%;
+    height:100%;
+    background:#F2F2F2;
+    box-sizing: border-box;
+    padding:50px 0 40px;
+    background:url(../assets/images/info.png) no-repeat 0px 50px;
+    background-size:100% 60%;
+  }
 </style>

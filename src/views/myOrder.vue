@@ -1,7 +1,8 @@
 
 <template>
   <div>
-    <nv-head :title="myOrder"></nv-head>
+    <nv-head></nv-head>
+    <div class="order"></div>
     <nv-bottom></nv-bottom>
   </div>
 

@@ -1,10 +1,10 @@
 <template>
 	<div class="bottom">
 
-    	<div> <router-link to="/index">index</router-link></div>
-    	<div> <router-link to="/product">product</router-link></div>
-    	<div> <router-link to="/myOrder">myOrder</router-link></div>
-    	<div> <router-link to="/info">info</router-link></div>
+    	<div class="bottom-link"> <router-link to="/index">首页</router-link></div>
+    	<div class="bottom-link"> <router-link to="/product/productList">产品</router-link></div>
+    	<div class="bottom-link"> <router-link to="/myOrder">我的订单</router-link></div>
+    	<div class="bottom-link"> <router-link to="/info">个人中心</router-link></div>
 
     </div>
 </template>
@@ -15,7 +15,7 @@
 	    data() {
 	      return {
 	        message1: '111111111111111',
-	
+
 	      };
 	    }
 
@@ -28,9 +28,19 @@
 		height: 40px;
 		position:fixed;
 		bottom:0;
-		background:red;
+		background:#fff;
 	}
 	.bottom div{
 		float: left;
 	}
+  .bottom-link{
+    width:25%;
+    height:100%;
+    text-align: center;
+    line-height: 40px;
+
+  }
+  .bottom-link a{
+    color:#999;
+  }
 </style>

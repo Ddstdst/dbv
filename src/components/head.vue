@@ -4,7 +4,8 @@
 
   <div class="head">
 
-    <h2>{{title}}</h2>
+    <h2>{{title()}}</h2>
+
 
   </div>
 
@@ -14,13 +15,18 @@
   //import $ from 'webpack-zepto';
 
   export default {
-    props: ['title'],
+
     data() {
       return {
-        message1: '111111111111111',
+        title: function(){
+          return this.$route.meta.title;
+        }
 
       };
-    }
+    },
+    mounted() {
+      //alert(1)
+    },
     /*replace: true,*/
 //    props: {
 //      pageType: String,
@@ -55,9 +61,10 @@
 </script>
 <style>
   .head{
+    background: #2d83ce;
     width:100%;
-    height:60px;
-    background:red;
+    height:50px;
+
     position:fixed;
     left:0;
     top:0;
@@ -66,5 +73,8 @@
   	width:100%;
   	height:100%;
   	text-align: center;
+    line-height: 50px;
+    color:#fff;
   }
+
 </style>

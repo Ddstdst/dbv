@@ -33,6 +33,7 @@ const routers=[
   {
     path: '/index',
     name: 'index',
+    meta:{title:'首页'},
     component: index
   },
   {
@@ -45,15 +46,19 @@ const routers=[
     },
     children: [
       {
+        name:'productList',
+        meta:{title:'产品'},
         // 当 /user/:id/profile 匹配成功，
         // UserProfile 会被渲染在 User 的 <router-view> 中
         path: 'productList',
         component: productList
       },
       {
+        name:'productDetail',
+        meta:{title:'详情'},
         // 当 /user/:id/posts 匹配成功
         // UserPosts 会被渲染在 User 的 <router-view> 中
-        path: 'productDetail',
+        path: 'productDetail/:id',
         component: productDetail
       }
     ]
@@ -62,6 +67,7 @@ const routers=[
   {
     path: '/myOrder',
     name: 'myOrder',
+    meta:{title:'我的订单'},
     component(resolve) {
       require.ensure(['../views/myOrder.vue'], () => {
         resolve(require('../views/myOrder.vue'));
@@ -72,6 +78,7 @@ const routers=[
   {
     path: '/info',
     name: 'info',
+    meta:{title:'个人信息'},
     component(resolve) {
       require.ensure(['../views/info.vue'], () => {
         resolve(require('../views/info.vue'));

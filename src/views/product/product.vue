@@ -3,6 +3,7 @@
   <div id="product">
     <nv-head :title="product"></nv-head>
     <router-view></router-view>
+    <nv-bottom></nv-bottom>
   </div>
 
  <!-- <div>
@@ -30,5 +31,8 @@
   };
 </script>
 <style>
-
+  #product{
+    width:100%;
+    height:100%;
+  }
 </style>

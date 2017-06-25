@@ -9,8 +9,8 @@ import VueRouter from 'vue-router'
 import "../mockData/data.js"
 import $ from 'jquery'
 import './assets/commom.css'
-Vue.config.productionTip = false
-Vue.use(VueRouter)
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
 /* eslint-disable no-new */
 /*new Vue({
   el: '#app',
@@ -27,31 +27,31 @@ new Vue({
 
 }).$mount('#app');
 
+router.beforeEach((to, from, next) => {
+  //  alert(1)
+  // 处理左侧滚动不影响右边
+  //$('html, body, #page').removeClass('scroll-hide');
+  //console.log(to.title)
+  console.log(to)
+  console.log(to.matched)  /*matched.some 数组的一个方法*/
+  if (to.matched.some(record => record.meta.requiresAuth)) {
 
+    if (/*判断是否登陆*/store.state.userInfo.userId) {
+      next();
+    } else {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      });
+    }
+  } else {
+    next();
+  }
+});
 
 
 //ajax请求
 
-  $.ajax({
-    url        : "http://mockjs",    //请求的url地址
-    dataType   : "json",   //返回格式为json
-    async      : true, //请求是否异步，默认为异步，这也是ajax重要特性
-    data       : {},    //参数值
-    type       : "GET",   //请求方式
-    beforeSend : function() {
-      //请求前的处理
-    },
-    success: function(req) {
-      //请求成功时处理
-      console.log(req);
-    },
-    complete: function() {
-      //请求完成的处理
-    },
-    error: function() {
-      //请求出错处理
-    }
-  });
 //alert(1);
 
 

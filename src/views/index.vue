@@ -1,14 +1,13 @@
 
 <template>
 	<!--要写个div包裹整个-->
-	<div>
+	<div class="index">
 
-    	<nv-head :title="index"></nv-head>
-    	<div class='index'>
-
-    	</div>
+    	<nv-head></nv-head>
+    	<div class="index-list">
+      </div>
     	<nv-bottom></nv-bottom>
-  	</div>
+  </div>
 
 
 
@@ -31,12 +30,25 @@
     },
     components: {
         nvHead,
-		nvBottom
+		    nvBottom
     }
   };
 </script>
 <style>
 	.index{
-
+    height:100%;
+    width:100%;
+    background:#F2F2F2;
 	}
+  .index-list{
+    width:100%;
+    height:100%;
+    padding:50px 0 40px;
+    box-sizing: border-box;
+
+    background:url(../assets/images/index.jpg) no-repeat;
+    background-size:100% 70%;
+  }
+
+
 </style>
