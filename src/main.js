@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-jjjjjjjjjjjjjjjjj
+66666666666
 
 //ajax请求
 
